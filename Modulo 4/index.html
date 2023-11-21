@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage Demo</title>
+</head>
+<body>
+
+    <section class="local">
+        <h2>LocalStorage Demo</h2>
+        <label for="datoInput">Ingrese un dato:</label>
+        <input type="text" id="datoInput">
+        <button onclick="guardarEnLocalStorage()">Guardar en LocalStorage</button>
+        <p id="resultadoLocalStorage"></p>
+    </section>
+
+    <section class="session">
+        <h2>SessionStorage Demo</h2>
+        <label for="datoInput">Ingrese un dato:</label>
+        <input type="text" id="datoInput">
+        <button onclick="guardarEnSessionStorage()">Guardar en SessionStorage</button>
+        <p id="resultadoSessionStorage"></p>
+    </section>
+    <script src="scrpit.js"></script>
+</body>
+</html>
