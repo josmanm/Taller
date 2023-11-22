@@ -1,4 +1,5 @@
 
+//obtenes todos los jugadores 
 function guardarEnLocalStorage() {
     var dato = document.getElementById('datoInput').value;
 
@@ -63,3 +64,22 @@ document.getElementById('miLista').addEventListener('click', function (event) {
         console.log('Clic en: ' + event.target.textContent);
     }
 });
+
+document.getElementById('button-players').addEventListener('click', function (event) {
+    getPlayers().then(players => {
+        console.log(players);
+        players.forEach(player => {
+            document.getElementById('miListaJugadores').innerHTML += `<li>${player.name}</li>`;
+        });
+    });
+}
+);
+
+const getPlayers = async () => {
+    try {
+        const response = await axios.get('https://myplayers-miniback.onrender.com/players');
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
+}
